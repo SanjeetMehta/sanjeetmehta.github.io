@@ -521,14 +521,29 @@
             white-space: nowrap;
             animation: bob 6s ease-in-out infinite alternate;
         }
-        .orbit-chip img { width: 20px; height: 20px; }
-        .orbit-chip.c1 { top: 4%; left: 0; }
-        .orbit-chip.c2 { top: 16%; right: -2%; animation-delay: -1.5s; }
-        .orbit-chip.c3 { bottom: 14%; left: -4%; animation-delay: -3s; }
-        .orbit-chip.c4 { bottom: 2%; right: 4%; animation-delay: -4.5s; }
+        .orbit-chip .ic {
+            width: 24px; height: 24px;
+            border-radius: 7px;
+            background: #fff;
+            display: grid; place-items: center;
+            box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+        }
+        .orbit-chip img { width: 16px; height: 16px; }
+        .orbit-chip.c1 { top: 0; left: 4%; }
+        .orbit-chip.c2 { top: -2%; right: 12%; animation-delay: -0.8s; }
+        .orbit-chip.c3 { top: 24%; right: -6%; animation-delay: -1.6s; }
+        .orbit-chip.c4 { top: 40%; left: -8%; animation-delay: -2.4s; }
+        .orbit-chip.c5 { top: 60%; right: -8%; animation-delay: -3.2s; }
+        .orbit-chip.c6 { bottom: 8%; left: 0; animation-delay: -4s; }
+        .orbit-chip.c7 { bottom: -2%; right: 10%; animation-delay: -4.8s; }
+        @media (max-width: 1240px) {
+            .orbit-chip.c3 { right: -1%; }
+            .orbit-chip.c4 { left: -3%; }
+            .orbit-chip.c5 { right: -2%; }
+        }
         .orbit-chip .ai-dot {
-            width: 20px; height: 20px;
-            border-radius: 6px;
+            width: 24px; height: 24px;
+            border-radius: 7px;
             display: grid; place-items: center;
             background: var(--grad);
             color: #fff;
@@ -1260,10 +1275,13 @@
                     <div class="avatar-wrap">
                         <img class="avatar" src="assets/profile.jpg" alt="Portrait of Sanjeetkumar Mehta" width="280" height="280">
                     </div>
-                    <span class="orbit-chip c1" aria-hidden="true"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/okta/okta-original.svg" alt=""> Okta</span>
-                    <span class="orbit-chip c2" aria-hidden="true"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/kubernetes/kubernetes-original.svg" alt=""> Kubernetes</span>
-                    <span class="orbit-chip c3" aria-hidden="true"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/terraform/terraform-original.svg" alt=""> Terraform</span>
-                    <span class="orbit-chip c4" aria-hidden="true"><span class="ai-dot"><i class="fas fa-wand-magic-sparkles"></i></span> RAG &amp; Agents</span>
+                    <span class="orbit-chip c1" aria-hidden="true"><span class="ic"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/okta/okta-original.svg" alt=""></span> Okta</span>
+                    <span class="orbit-chip c2" aria-hidden="true"><span class="ic"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt=""></span> AWS</span>
+                    <span class="orbit-chip c3" aria-hidden="true"><span class="ic"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/kubernetes/kubernetes-original.svg" alt=""></span> Kubernetes</span>
+                    <span class="orbit-chip c4" aria-hidden="true"><span class="ic"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/java/java-original.svg" alt=""></span> Java</span>
+                    <span class="orbit-chip c5" aria-hidden="true"><span class="ic"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/python/python-original.svg" alt=""></span> Python</span>
+                    <span class="orbit-chip c6" aria-hidden="true"><span class="ic"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/terraform/terraform-original.svg" alt=""></span> Terraform</span>
+                    <span class="orbit-chip c7" aria-hidden="true"><span class="ai-dot"><i class="fas fa-wand-magic-sparkles"></i></span> RAG &amp; Agents</span>
                 </div>
             </div>
 
