@@ -784,6 +784,128 @@
         }
         .skill-card:hover .chips li { border-color: hsl(var(--h) 80% 55% / 0.35); }
 
+        /* Featured project */
+        .featured {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 36px;
+            align-items: center;
+            padding: 32px;
+            margin-bottom: 48px;
+            border-color: transparent;
+            background: linear-gradient(var(--surface), var(--surface)) padding-box, var(--grad) border-box;
+            box-shadow: var(--shadow-hover);
+        }
+        .live-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--accent-text);
+        }
+        .live-badge .pulse { background: #22c55e; }
+        .live-badge .pulse::after { border-color: #22c55e; }
+        .featured h3 {
+            margin-top: 12px;
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+        .featured-sub {
+            display: block;
+            margin-top: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: var(--subtle);
+        }
+        .featured-copy > p { margin-top: 14px; color: var(--muted); }
+        .featured-stats {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0 18px;
+        }
+        .featured-stats li {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 10px;
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+        .featured-stats strong { color: var(--text); font-weight: 800; font-size: 1rem; }
+        .featured-stats strong i { color: var(--accent-text); font-size: 0.85rem; }
+        .featured .chips { gap: 6px; }
+        .featured .chips li { font-size: 0.78rem; padding: 3px 10px; }
+        .featured .actions { align-items: center; margin-top: 24px; }
+        .featured-url { font-family: var(--mono); font-size: 0.82rem; color: var(--subtle); }
+
+        .browser {
+            display: block;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border-strong);
+            background: #0d1117;
+            box-shadow: 0 24px 50px rgba(15, 23, 42, 0.25);
+            transform: perspective(1400px) rotateY(-6deg) rotateX(2deg);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .browser:hover { transform: perspective(1400px) rotateY(0) rotateX(0) translateY(-4px); box-shadow: 0 30px 60px rgba(15, 23, 42, 0.32); text-decoration: none; }
+        .browser-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            background: #161b26;
+            border-bottom: 1px solid #242c3b;
+        }
+        .dots { display: flex; gap: 6px; }
+        .dots i { width: 10px; height: 10px; border-radius: 50%; background: #ff5f57; }
+        .dots i:nth-child(2) { background: #febc2e; }
+        .dots i:nth-child(3) { background: #28c840; }
+        .address {
+            flex: 1;
+            max-width: 280px;
+            margin: 0 auto;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: #0d1117;
+            color: #8b98ad;
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .address i { font-size: 0.65rem; margin-right: 4px; color: #28c840; }
+        .browser img { display: block; width: 100%; height: auto; }
+
+        .group-head {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+        .group-head h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; }
+        .group-head span {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--subtle);
+        }
+
         /* Projects */
         .projects {
             display: grid;
@@ -1067,6 +1189,9 @@
             .stats { grid-template-columns: repeat(2, 1fr); }
             .about-grid { grid-template-columns: 1fr; }
             .projects { grid-template-columns: 1fr; }
+            .featured { grid-template-columns: 1fr; gap: 28px; }
+            .browser { transform: none; }
+            .browser:hover { transform: translateY(-4px); }
             .bento { grid-template-columns: repeat(2, 1fr); }
             .skill-card, .skill-card.wide { grid-column: span 1; }
             .skill-card.full-sm { grid-column: span 2; }
@@ -1113,6 +1238,9 @@
             .role { padding-left: 24px; }
             .track { padding: 16px 14px; }
 
+            .featured { padding: 20px 16px; margin-bottom: 36px; }
+            .featured h3 { font-size: 1.5rem; }
+            .featured .actions .btn { flex: 0 1 auto; }
             .cta { padding: 32px 22px; margin-top: 72px; border-radius: 22px; }
             .cta .actions { width: 100%; }
             .cta .btn { flex: 1 1 auto; justify-content: center; }
@@ -1184,6 +1312,15 @@
             .chips li { padding: 0 8px; }
             .projects { display: block; }
             .project { margin-bottom: 8px; }
+            .featured { display: block; padding: 12px 14px; margin-bottom: 14px; background: #fff; border: 1px solid #ccc; }
+            .featured h3 { font-size: 13pt; margin-top: 4px; }
+            .featured-sub { display: inline; margin-left: 6px; font-size: 10pt; }
+            .featured-stats { margin: 8px 0; }
+            .featured-stats li { padding: 2px 8px; }
+            .browser, .live-badge, .featured .btn { display: none !important; }
+            .featured .actions { margin-top: 8px; }
+            .group-head { margin-bottom: 8px; break-after: avoid; }
+            .group-head h3 { font-size: 12pt; }
             .project { padding: 12px 14px; }
             .project-top { display: none; }
             .card { border-color: #ccc; }
@@ -1224,7 +1361,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">AI Projects</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
             </ul>
@@ -1436,11 +1573,45 @@
                 </div>
             </section>
 
-            <!-- AI Projects -->
+            <!-- Projects -->
             <section id="projects" aria-labelledby="projects-title">
                 <div class="section-head reveal">
-                    <span class="kicker">03 &middot; AI Engineering Projects</span>
-                    <h2 id="projects-title">Independent <span class="grad-text">study</span></h2>
+                    <span class="kicker">03 &middot; Projects</span>
+                    <h2 id="projects-title">Things I've <span class="grad-text">built</span></h2>
+                </div>
+
+                <article class="card featured reveal">
+                    <div class="featured-copy">
+                        <span class="live-badge"><span class="pulse" aria-hidden="true"></span> Live &middot; Personal project</span>
+                        <h3>DevTools <span class="featured-sub">Free Online Developer Tools</span></h3>
+                        <p>A toolkit of 25 free developer tools for encoding, hashing, formatting, converting, and generating. Everything runs in the browser, so nothing you paste ever leaves your device.</p>
+                        <ul class="featured-stats" aria-label="At a glance">
+                            <li><strong>25</strong> tools</li>
+                            <li><strong>6</strong> categories</li>
+                            <li><strong><i class="fas fa-lock" aria-hidden="true"></i></strong> Runs in your browser</li>
+                        </ul>
+                        <ul class="chips" aria-label="Highlighted tools">
+                            <li>JWT Decoder</li><li>SAML Parser</li><li>HMAC Generator</li><li>JSON Formatter</li><li>Regex Tester</li><li>Text Diff</li><li>UUID Generator</li><li>Password Generator</li>
+                        </ul>
+                        <div class="actions">
+                            <a href="https://devs-tools.vercel.app" target="_blank" rel="noopener" class="btn btn-primary">
+                                <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i> Open DevTools
+                            </a>
+                            <span class="featured-url">devs-tools.vercel.app</span>
+                        </div>
+                    </div>
+                    <a class="browser" href="https://devs-tools.vercel.app" target="_blank" rel="noopener" aria-label="Open DevTools (opens in a new tab)">
+                        <span class="browser-bar" aria-hidden="true">
+                            <span class="dots"><i></i><i></i><i></i></span>
+                            <span class="address"><i class="fas fa-lock"></i> devs-tools.vercel.app</span>
+                        </span>
+                        <img src="assets/devtools-preview.jpg" alt="Screenshot of the DevTools home page listing encoding and hashing tools" width="1200" height="750" loading="lazy">
+                    </a>
+                </article>
+
+                <div class="group-head reveal">
+                    <h3>AI Engineering Projects</h3>
+                    <span>Independent study</span>
                 </div>
                 <div class="projects">
                     <article class="card lift project reveal">
